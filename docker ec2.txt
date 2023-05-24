@@ -1,0 +1,19 @@
+install docker
+
+docker images
+
+docker ps 
+(to see which container is running)
+
+pull docker jdk copy paste from website
+
+
+EC2 instanse : 
+click on instances 
+launch instances
+provide name
+os type
+key pairselect auto ip enable
+for red hat copy ssh link
+
+more /etc/os-release
