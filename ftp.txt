@@ -1,0 +1,8 @@
+1.sudo apt install net-tools
+2.sudo apt install openssh-server
+3.if config
+4.scp file.txt vboxuser@10.0.2.4:
+5.password
+
+file ls :
+ssh vboxuser1@10.0.2.15 "ls"
