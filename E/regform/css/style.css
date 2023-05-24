@@ -1,0 +1,42 @@
+.box{
+    border-color: black;
+    background-color: yellow;
+
+}
+.container{
+    margin: 0%;
+}
+.center{
+    text-align: center;
+    align-items: center;
+}
+.h1-primary{
+    text-size-adjust: auto;
+    font-size: 2.8rem;
+    color: red;
+    text-align: center;
+}
+.h1-secondary{
+    
+    font-size: 1.8rem;
+    color: black;
+}
+.box2{
+    background-color: lightblue;
+}
+
+.white-box{
+    background-color: white;
+    
+}
+.input-box{
+    margin : 1%;
+    /* size: 70%; */
+    width: 80%;
+}
+.input-box2{
+    margin : 1%;
+    /* size: 70%; */
+    width: 80%;
+    height: 100px;
+}

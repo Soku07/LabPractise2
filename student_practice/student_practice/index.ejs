@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/addStudent" method="post">
+        <input placeholder="Name" name="Name" type="text" required>
+        <input placeholder="Roll No" name="Roll_No" type="text" required>
+        <input placeholder="WAD Marks" name="WAD_Marks" type="Number" required>
+        <input placeholder="CC Marks" name="CC_Marks" type="Number" required>
+        <input placeholder="DSBDA Marks" name="DSBDA_Marks" type="Number" required>
+        <input placeholder="CNS Marks" name="CNS_Marks" type="Number" required>
+        <br>
+        <button type="submit" >Submit</button>
+    </form>
+    <br>
+    <h2>Press Enter to Get All the records </h2>
+    
+        <button type="submit" onclick="fetchData()">Enter</button>
+
+
+        <h1>Count: <span id="count"></span></h1>
+        <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>WAD Marks</th>
+                <th>CC Marks</th>
+                <th>DSBDA Marks</th>
+                <th>CNS Marks</th>
+            </tr>
+        </thead>
+        <tbody id="dataBody"></tbody>
+        </table>
+        <br>
+        <h1>Delete  Some Records!!!</h1>
+        <form action="/deleteStudent" method="post">
+            <input placeholder="Roll No" name="Roll_No" type="text" required>
+            <br>
+            <button type="submit" >Delete</button>
+        <script>
+            const fetchData = () =>{
+                fetch('/getStudent')
+                .then(res=>res.json())
+                .then(data=>{
+                    document.getElementById('count').innerHTML =data.count;
+                    
+                    let body=document.getElementById('dataBody');
+
+                    body.innerHTML = '';
+
+                    data.records.forEach(record=>{
+                        const row = document.createElement('tr');
+                        const name = document.createElement('td');
+                        const roll_no = document.createElement('td');
+                        const wad_marks = document.createElement('td');
+                        const cc_marks = document.createElement('td');
+                        const dsbda_marks = document.createElement('td');
+                        const cns_marks = document.createElement('td');
+
+                        name.textContent = record.Name;
+                        roll_no.textContent = record.Roll_No;
+                        wad_marks.textContent = record.WAD_Marks; 
+                        cc_marks.textContent = record.CC_Marks;
+                        dsbda_marks.textContent = record.DSBDA_Marks;
+                        cns_marks.textContent = record.CNS_Marks;
+
+                        row.appendChild(name);
+                        row.appendChild(roll_no);
+                        row.appendChild(wad_marks);
+                        row.appendChild(cc_marks);
+                        row.appendChild(dsbda_marks);
+                        row.appendChild(cns_marks);
+                        body.appendChild(row);
+                    })
+                
+                })
+                .catch(err=>{
+                    console.log(err);
+                })
+            }
+        </script>
+
+</body>
+</html>

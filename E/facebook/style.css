@@ -1,0 +1,29 @@
+
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(233, 232, 232); 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.header{
+    background-color: rgb(4, 4, 148);
+    display: inline-flex;
+    width: 100%;
+    padding: 30px;
+}
+
+.left-header{
+    float: left;
+    padding-left: 50px;
+    width: 50%;
+    
+}
+.right-header{
+    float: right;
+}
+.right-header label{
+    color : white;
+    text-decoration: none;
+    font-size: 15px;
+}
